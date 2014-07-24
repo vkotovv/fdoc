@@ -1,0 +1,5 @@
+name: Webservice API
+basePath: https://api.domain.com/v1
+description: |
+  Веб сервис обеспечивающий работу api для мобильного клиента на android
+  и веб приложения для модераторов и администраторов

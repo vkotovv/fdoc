@@ -1,0 +1,40 @@
+description: Создание города. Доступна пользователям с правами администратора или модератора.
+requestParameters:
+  cityName: Название города
+responseParameters:
+  properties:
+    data:
+      description: Созданный город
+      type: object
+      properties:
+        cityId:
+          description: Id города
+          type: integer
+          required: yes
+          example: 1
+        cityName:
+          description: Название города
+          type: string
+          required: yes
+          example: Москва
+    success:
+      type: boolean
+      description: Результат выполнения запроса
+      example: true
+      required: yes
+responseCodes:
+  - status: 200 OK
+    successful: yes
+    description: Успешный выполненный запрос, в теле ответа - созданый город.
+  - status: 400 Bad request
+    successful: no
+    description: Неправильный параметры запроса
+  - status: 401 Unauthorized
+    successful: no
+    description: Для выполнения запроса необходима авторизация
+  - status: 403 Forbidden
+    successful: no
+    description: У пользователя нету прав для выполнения запроса
+  - status: 500 Server error
+    successful: no
+    description: Произошла ошибка на сервере

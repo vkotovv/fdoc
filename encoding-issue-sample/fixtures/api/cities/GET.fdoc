@@ -1,0 +1,36 @@
+description: Возвращает список городов. Доступна для всех категорий пользователей.
+responseParameters:
+  properties:
+    data:
+      type: array
+      required: yes
+      items:
+        description: список городов
+        type: object
+        properties:
+          cityId:
+            description: Id города
+            type: integer
+            required: yes
+            example: 1
+          cityName:
+            description: Название города
+            type: string
+            required: yes
+            example: Москва
+    success:
+      type: boolean
+      description: Результат выполнения запроса
+      example: true
+      required: yes
+responseCodes:
+  - status: 200 OK
+    successful: yes
+    description: Список городов
+  - status: 204 No content
+    successful: yes
+    description: Список городов пуст
+  - status: 500 Server error
+    successful: no
+    description: Произошла ошибка на сервере
+

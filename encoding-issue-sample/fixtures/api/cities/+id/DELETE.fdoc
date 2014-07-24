@@ -1,0 +1,26 @@
+description: Удаляет город, возможно только если к городу не привязана компания. Доступна пользователям с правами администратора или модератороа.
+requestParameters:
+  +id: id города
+responseParameters:
+  properties:
+    success:
+      type: boolean
+      description: Результат выполнения запроса
+      example: true
+      required: yes
+responseCodes:
+  - status: 200 OK
+    successful: yes
+    description: Успешный выполненный запрос, в теле ответа - созданый город.
+  - status: 401 Unauthorized
+    successful: no
+    description: Для выполнения запроса необходима авторизация
+  - status: 403 Forbidden
+    successful: no
+    description: У пользователя нету прав для выполнения запроса
+  - status: 404 Not found
+    successful: no
+    description: Такого города не существует
+  - status: 500 Server error
+    successful: no
+    description: Произошла ошибка на сервере

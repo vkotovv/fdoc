@@ -1,0 +1,5 @@
+name: Web API v1
+description: |
+  Документация для второй версии API, веб сервис
+services:
+  - ./api
